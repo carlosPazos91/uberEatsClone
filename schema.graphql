@@ -1,0 +1,43 @@
+type Query {
+
+    getUsers: [User]!
+}
+
+type Mutation{
+    createUser (data:UserCreateInput!) : User!
+    createSupplier (data:SupplierCreateInput!) : Supplier!
+}
+
+type User {
+    _id: ID!
+    first_name: String!
+    last_name: String!
+    email: String!
+    birth_date: String!
+    profile_pic: String!
+    phone_number: String!
+    is_active: Boolean
+}
+
+type Supplier {
+    _id: ID!
+    supplier_name: String!
+    email: String!
+}
+
+
+input UserCreateInput {
+    first_name: String!
+    last_name: String!
+    email: String!
+    birth_date: String
+    profile_pic: String
+    phone_number: String!
+    is_active: Boolean
+}
+
+input SupplierCreateInput {
+    supplier_name: String!
+    email: String!
+}
+
